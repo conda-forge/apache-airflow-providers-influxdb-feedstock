@@ -21,13 +21,14 @@ requirements:
     - setuptools
   run:
     - python >=3.7
+    - apache-airflow >=2.2.0
     - influxdb-client >=1.19.0
     - pandas >=0.17.1
 
 test:
   imports:
     - airflow.providers.influxdb
-    - airflow.providers.influxdb.example_dags
+    - airflow.providers.influxdb.hooks
   commands:
     - pip check
   requires:

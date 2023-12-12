@@ -1,13 +1,13 @@
 {% set name = "apache-airflow-providers-influxdb" %}
-{% set version = "2.3.0" %}
+{% set version = "2.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-influxdb-{{ version }}.tar.gz
-  sha256: 701e9e6441ec71894c0d595aa4c9376d5b1a608bf1cb6b2a08138cdbf2a82f84
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 6777ffd52551725c383f54a86b78e432161314c1222dec4ed23a1c2e6da8f459
 
 build:
   noarch: python

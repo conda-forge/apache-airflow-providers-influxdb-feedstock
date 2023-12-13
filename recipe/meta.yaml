@@ -1,13 +1,13 @@
 {% set name = "apache-airflow-providers-influxdb" %}
-{% set version = "2.3.0" %}
+{% set version = "2.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-influxdb-{{ version }}.tar.gz
-  sha256: 701e9e6441ec71894c0d595aa4c9376d5b1a608bf1cb6b2a08138cdbf2a82f84
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 6777ffd52551725c383f54a86b78e432161314c1222dec4ed23a1c2e6da8f459
 
 build:
   noarch: python
@@ -16,31 +16,28 @@ build:
 
 requirements:
   host:
-    - python >=3.8
-    - setuptools >=67.2.0,<68.0.0
+    - python >=3.8,<4.dev0
+    - flit-core >=3.2,<4
     - pip
   run:
     - python >=3.8
-    - apache-airflow >=2.5.0
+    - apache-airflow >=2.6.0
     - influxdb-client >=1.19.0
     - requests >=2.26.0
 
 test:
   imports:
     - airflow.providers.influxdb
-    - airflow.providers.influxdb.hooks
   commands:
     - pip check
   requires:
     - pip
 
 about:
-  home: https://airflow.apache.org/
-  summary: Provider for Apache Airflow. Implements apache-airflow-providers-influxdb package
+  home: https://github.com/apache/airflow/
+  summary: Provider package apache-airflow-providers-influxdb for Apache Airflow
   license: Apache-2.0
-  license_file:
-    - LICENSE
-    - NOTICE
+  license_file: airflow/providers/influxdb/LICENSE
   license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-influxdb/stable/index.html
   dev_url: https://github.com/apache/airflow/

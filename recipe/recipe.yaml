@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-influxdb
-  version: "2.10.3"
+  version: "2.10.4"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_influxdb-${{ version }}.tar.gz
-  sha256: 9d184c94ef388160337e9741cc367131fc6ef6f5e270b943f3ae29735dbcba08
+  sha256: 82545fc96b6af92f39dbb0e3e3e307a28ce591b5a63cd564263c7d5fd197e4b3
 
 build:
   noarch: python

@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-influxdb
-  version: "2.10.4"
+  version: "2.11.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_influxdb-${{ version }}.tar.gz
-  sha256: 82545fc96b6af92f39dbb0e3e3e307a28ce591b5a63cd564263c7d5fd197e4b3
+  sha256: 95a6ef37420135672d6a95416f873731e5abd33890aa33e654b6047d1668d119
 
 build:
   noarch: python
@@ -25,6 +25,7 @@ requirements:
     - apache-airflow >=2.11.0
     - apache-airflow-providers-common-compat >=1.8.0
     - influxdb-client >=1.19.0
+    - influxdb3-python >=0.7.0
     - requests >=2.32.0,<3
 
 tests:

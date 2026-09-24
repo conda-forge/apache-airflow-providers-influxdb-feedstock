@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-influxdb
-  version: "2.11.0"
+  version: "2.11.1"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_influxdb-${{ version }}.tar.gz
-  sha256: 95a6ef37420135672d6a95416f873731e5abd33890aa33e654b6047d1668d119
+  sha256: ef1abf625221a7056fec82357dbf44ec0a4fcb696d94b3ecd20f572d15fdf38e
 
 build:
   noarch: python
@@ -19,7 +19,7 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - flit-core ==3.12.0
+    - flit-core ==4.0.2
   run:
     - python >=${{ python_min }}
     - apache-airflow >=2.11.0

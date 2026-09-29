@@ -24,10 +24,11 @@ requirements:
     - python >=${{ python_min }}
     - apache-airflow >=2.11.0
     - apache-airflow-providers-common-compat >=1.17.0
+    # tightest of upstream's floors (python >=3.14)
+    - pandas >=2.3.3
     - influxdb-client >=1.19.0
     - influxdb3-python >=0.12.0
     - requests >=2.32.0,<3
-    - pandas >=2.1.2
 tests:
   - python:
       imports:
